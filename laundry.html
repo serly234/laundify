@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CleanWash Laundry</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5fbfd;
+            color: #263238;
+        }
+
+
+        /* NAVBAR */
+
+        nav {
+            background: #246b8f;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d8f4ff;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            padding: 85px 8%;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #dff6ff,
+                #ffffff
+            );
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            color: #246b8f;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #607d8b;
+            margin-bottom: 25px;
+        }
+
+
+        /* BUTTON */
+
+        .btn {
+            border: none;
+            padding: 13px 25px;
+            background: #3d91b7;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #246b8f;
+        }
+
+
+        /* SECTION */
+
+        section {
+            padding: 60px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .judul h2 {
+            color: #246b8f;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .judul p {
+            color: #78909c;
+        }
+
+
+        /* TENTANG */
+
+        .tentang {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            color: #546e7a;
+        }
+
+
+        /* LAYANAN */
+
+        .layanan {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #246b8f;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #78909c;
+            line-height: 1.6;
+        }
+
+
+        /* FORM */
+
+        .form-section {
+            background: #eaf8fd;
+        }
+
+        .form-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cfd8dc;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 90px;
+            resize: none;
+        }
+
+
+        /* TOTAL */
+
+        .total-box {
+            background: #e7f7fd;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .total-box p {
+            margin-bottom: 8px;
+        }
+
+        #total {
+            color: #246b8f;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+
+        /* CEK STATUS */
+
+        .status-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .status-box input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cfd8dc;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .hasil-status {
+            margin-top: 25px;
+            padding: 22px;
+            background: #e7f7fd;
+            border-radius: 15px;
+            line-height: 1.8;
+        }
+
+        .status-besar {
+            text-align: center;
+            color: #246b8f;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+
+        /* KEUNGGULAN */
+
+        .keunggulan {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .unggul {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow:
+                0 7px 20px rgba(0,0,0,0.06);
+        }
+
+        .unggul h3 {
+            color: #246b8f;
+            margin: 10px 0;
+        }
+
+
+        /* KONTAK */
+
+        .kontak {
+            background: #246b8f;
+            color: white;
+            text-align: center;
+        }
+
+        .kontak h2 {
+            margin-bottom: 12px;
+        }
+
+        .wa {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: white;
+            color: #246b8f;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+
+        /* ADMIN */
+
+        .admin-link {
+            text-align: center;
+            padding: 30px;
+            background: #edf7fa;
+        }
+
+        .admin-link a {
+            color: #246b8f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #183f54;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media(max-width:800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .layanan {
+                grid-template-columns: 1fr;
+            }
+
+            .keunggulan {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+        }
+
+
+        @media(max-width:500px) {
+
+            .keunggulan {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            🧺 CleanWash
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#beranda">Beranda</a>
+            </li>
+
+            <li>
+                <a href="#layanan">Layanan</a>
+            </li>
+
+            <li>
+                <a href="#pesan">Pesan</a>
+            </li>
+
+            <li>
+                <a href="#status">Cek Status</a>
+            </li>
+
+            <li>
+                <a href="admin.html">Admin</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="beranda">
+
+        <h1>
+            CleanWash Laundry
+        </h1>
+
+        <p>
+            Bersih • Wangi • Rapi • Terpercaya
+        </p>
+
+        <a href="#pesan" class="btn">
+            🧺 Pesan Sekarang
+        </a>
+
+    </section>
+
+
+    <!-- TENTANG -->
+
+    <section>
+
+        <div class="judul">
+
+            <h2>
+                Tentang CleanWash
+            </h2>
+
+            <p>
+                Solusi laundry praktis untuk semua kebutuhan.
+            </p>
+
+        </div>
+
+
+        <div class="tentang">
+
+            <p>
+                CleanWash Laundry adalah layanan laundry
+                yang membantu pelanggan mencuci berbagai
+                jenis barang dengan mudah. Tidak hanya
+                pakaian, kami juga menyediakan layanan
+                pencucian sepatu, tas, selimut, karpet
+                dan gorden.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LAYANAN -->
+
+    <section id="layanan">
+
+        <div class="judul">
+
+            <h2>
+                🧺 Layanan Kami
+            </h2>
+
+            <p>
+                Pilih jenis barang yang ingin dicuci.
+            </p>
+
+        </div>
+
+
+        <div class="layanan">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    👕
+                </div>
+
+                <h3>
+                    Pakaian
+                </h3>
+
+                <p>
+                    Cuci pakaian bersih dan wangi.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    👟
+                </div>
+
+                <h3>
+                    Sepatu
+                </h3>
+
+                <p>
+                    Membersihkan sepatu dengan hati-hati.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎒
+                </div>
+
+                <h3>
+                    Tas
+                </h3>
+
+                <p>
+                    Membersihkan berbagai jenis tas.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🛏️
+                </div>
+
+                <h3>
+                    Selimut
+                </h3>
+
+                <p>
+                    Selimut dicuci hingga bersih.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🧹
+                </div>
+
+                <h3>
+                    Karpet
+                </h3>
+
+                <p>
+                    Membersihkan karpet dari kotoran.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🪟
+                </div>
+
+                <h3>
+                    Gorden
+                </h3>
+
+                <p>
+                    Mencuci gorden agar bersih dan segar.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- PESANAN -->
+
+    <section
+        class="form-section"
+        id="pesan"
+    >
+
+        <div class="judul">
+
+            <h2>
+                📦 Pesan Laundry
+            </h2>
+
+            <p>
+                Isi data pelanggan dan pesanan.
+            </p>
+
+        </div>
+
+
+        <div class="form-box">
+
+
+            <div class="form-group">
+
+                <label>
+                    Nama Pelanggan
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama pelanggan"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Nomor WhatsApp
+                </label>
+
+                <input
+                    type="text"
+                    id="nomor"
+                    value="08985502002"
+                    placeholder="Contoh: 08985502002"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Jenis Barang
+                </label>
+
+                <select
+                    id="barang"
+                    onchange="hitungTotal()"
+                >
+
+                    <option value="7000">
+                        👕 Pakaian - Rp7.000/Kg
+                    </option>
+
+                    <option value="15000">
+                        👟 Sepatu - Rp15.000/Pasang
+                    </option>
+
+                    <option value="12000">
+                        🎒 Tas - Rp12.000/Pcs
+                    </option>
+
+                    <option value="15000">
+                        🛏️ Selimut - Rp15.000/Pcs
+                    </option>
+
+                    <option value="10000">
+                        🧹 Karpet - Rp10.000/Kg
+                    </option>
+
+                    <option value="12000">
+                        🪟 Gorden - Rp12.000/Kg
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Jumlah / Berat
+                </label>
+
+                <input
+                    type="number"
+                    id="jumlah"
+                    min="1"
+                    placeholder="Masukkan jumlah"
+                    oninput="hitungTotal()"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Catatan
+                </label>
+
+                <textarea
+                    id="catatan"
+                    placeholder="Contoh: Pisahkan warna putih"
+                ></textarea>
+
+            </div>
+
+
+            <div class="total-box">
+
+                <p>
+                    Total Pembayaran
+                </p>
+
+                <span id="total">
+                    Rp0
+                </span>
+
+            </div>
+
+
+            <button
+                class="btn"
+                onclick="buatPesanan()"
+                style="width:100%;"
+            >
+                🛒 Konfirmasi Pesanan
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CEK STATUS -->
+
+    <section id="status">
+
+        <div class="judul">
+
+            <h2>
+                🔎 Cek Status Pesanan
+            </h2>
+
+            <p>
+                Masukkan nomor WhatsApp untuk melihat
+                status pesanan.
+            </p>
+
+        </div>
+
+
+        <div class="status-box">
+
+            <input
+                type="text"
+                id="cekNomor"
+                placeholder="Masukkan nomor WhatsApp"
+            >
+
+
+            <button
+                class="btn"
+                onclick="cekStatus()"
+                style="width:100%;"
+            >
+                🔍 Cek Pesanan
+            </button>
+
+
+            <div
+                id="hasilStatus"
+                class="hasil-status"
+                style="display:none;"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+
+    <section>
+
+        <div class="judul">
+
+            <h2>
+                ⭐ Keunggulan CleanWash
+            </h2>
+
+        </div>
+
+
+        <div class="keunggulan">
+
+
+            <div class="unggul">
+
+                <div style="font-size:40px;">
+                    🫧
+                </div>
+
+                <h3>
+                    Bersih
+                </h3>
+
+                <p>
+                    Barang dicuci dengan bersih.
+                </p>
+
+            </div>
+
+
+            <div class="unggul">
+
+                <div style="font-size:40px;">
+                    🌸
+                </div>
+
+                <h3>
+                    Wangi
+                </h3>
+
+                <p>
+                    Hasil laundry wangi dan segar.
+                </p>
+
+            </div>
+
+
+            <div class="unggul">
+
+                <div style="font-size:40px;">
+                    ⚡
+                </div>
+
+                <h3>
+                    Cepat
+                </h3>
+
+                <p>
+                    Proses mudah dan praktis.
+                </p>
+
+            </div>
+
+
+            <div class="unggul">
+
+                <div style="font-size:40px;">
+                    💰
+                </div>
+
+                <h3>
+                    Terjangkau
+                </h3>
+
+                <p>
+                    Harga sesuai kebutuhan.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAK -->
+
+    <section class="kontak">
+
+        <h2>
+            📞 Hubungi CleanWash
+        </h2>
+
+        <p>
+            WhatsApp: 08985502002
+        </p>
+
+
+        <a
+            class="wa"
+            href="https://wa.me/628985502002"
+            target="_blank"
+        >
+            💬 Chat WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- ADMIN -->
+
+    <div class="admin-link">
+
+        <p>
+
+            👨‍💼 Pemilik Laundry?
+
+            <a href="admin.html">
+                Masuk ke Admin →
+            </a>
+
+        </p>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 CleanWash Laundry
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        /* HITUNG TOTAL */
+
+        function hitungTotal() {
+
+            var barang =
+                document.getElementById("barang");
+
+            var jumlah =
+                document.getElementById("jumlah");
+
+            var total =
+                document.getElementById("total");
+
+
+            var harga =
+                Number(barang.value);
+
+            var banyak =
+                Number(jumlah.value);
+
+
+            if (banyak > 0) {
+
+                var hasil =
+                    harga * banyak;
+
+                total.innerHTML =
+                    "Rp" +
+                    hasil.toLocaleString("id-ID");
+
+            } else {
+
+                total.innerHTML =
+                    "Rp0";
+
+            }
+
+        }
+
+
+        /* BUAT PESANAN */
+
+        function buatPesanan() {
+
+            var nama =
+                document.getElementById("nama")
+                .value
+                .trim();
+
+            var nomor =
+                document.getElementById("nomor")
+                .value
+                .trim();
+
+            var barang =
+                document.getElementById("barang");
+
+            var jumlah =
+                document.getElementById("jumlah")
+                .value;
+
+            var catatan =
+                document.getElementById("catatan")
+                .value
+                .trim();
+
+
+            if (nama === "") {
+
+                alert(
+                    "Nama pelanggan harus diisi!"
+                );
+
+                return;
+
+            }
+
+
+            if (nomor === "") {
+
+                alert(
+                    "Nomor WhatsApp harus diisi!"
+                );
+
+                return;
+
+            }
+
+
+            if (
+                jumlah === "" ||
+                Number(jumlah) <= 0
+            ) {
+
+                alert(
+                    "Jumlah atau berat harus diisi!"
+                );
+
+                return;
+
+            }
+
+
+            var harga =
+                Number(barang.value);
+
+            var namaBarang =
+                barang.options[
+                    barang.selectedIndex
+                ].text;
+
+
+            var totalHarga =
+                harga * Number(jumlah);
+
+
+            var data = {
+
+                id: Date.now(),
+
+                nama: nama,
+
+                nomor: nomor,
+
+                barang: namaBarang,
+
+                jumlah: jumlah,
+
+                total: totalHarga,
+
+                catatan:
+                    catatan === ""
+                    ? "-"
+                    : catatan,
+
+                status: "Menunggu",
+
+                tanggal:
+                    new Date()
+                    .toLocaleString("id-ID")
+
+            };
+
+
+            var pesanan =
+                JSON.parse(
+                    localStorage.getItem(
+                        "pesananLaundry"
+                    )
+                ) || [];
+
+
+            pesanan.push(data);
+
+
+            localStorage.setItem(
+                "pesananLaundry",
+                JSON.stringify(pesanan)
+            );
+
+
+            alert(
+                "✅ PESANAN BERHASIL!\n\n" +
+
+                "Nama: " +
+                nama +
+
+                "\nNo. WhatsApp: " +
+                nomor +
+
+                "\nBarang: " +
+                namaBarang +
+
+                "\nJumlah: " +
+                jumlah +
+
+                "\nTotal: Rp" +
+                totalHarga
+                .toLocaleString("id-ID") +
+
+                "\nStatus: Menunggu"
+            );
+
+
+            document.getElementById("nama")
+                .value = "";
+
+            document.getElementById("jumlah")
+                .value = "";
+
+            document.getElementById("catatan")
+                .value = "";
+
+            document.getElementById("total")
+                .innerHTML = "Rp0";
+
+        }
+
+
+        /* CEK STATUS */
+
+        function cekStatus() {
+
+            var nomor =
+                document.getElementById("cekNomor")
+                .value
+                .trim();
+
+            var hasil =
+                document.getElementById(
+                    "hasilStatus"
+                );
+
+
+            if (nomor === "") {
+
+                alert(
+                    "Masukkan nomor WhatsApp!"
+                );
+
+                return;
+
+            }
+
+
+            var pesanan =
+                JSON.parse(
+                    localStorage.getItem(
+                        "pesananLaundry"
+                    )
+                ) || [];
+
+
+            var ditemukan = [];
+
+
+            for (
+                var i = 0;
+                i < pesanan.length;
+                i++
+            ) {
+
+                if (
+                    pesanan[i].nomor === nomor
+                ) {
+
+                    ditemukan.push(
+                        pesanan[i]
+                    );
+
+                }
+
+            }
+
+
+            hasil.style.display = "block";
+
+
+            if (
+                ditemukan.length === 0
+            ) {
+
+                hasil.innerHTML =
+
+                    "<div class='status-besar'>" +
+
+                    "❌ Pesanan Tidak Ditemukan" +
+
+                    "</div>" +
+
+                    "<p>" +
+
+                    "Nomor WhatsApp belum memiliki pesanan." +
+
+                    "</p>";
+
+                return;
+
+            }
+
+
+            var data =
+                ditemukan[
+                    ditemukan.length - 1
+                ];
+
+
+            var ikon = "🕐";
+
+
+            if (
+                data.status === "Dicuci"
+            ) {
+
+                ikon = "🫧";
+
+            }
+
+            else if (
+                data.status === "Dikeringkan"
+            ) {
+
+                ikon = "💨";
+
+            }
+
+            else if (
+                data.status === "Disetrika"
+            ) {
+
+                ikon = "👕";
+
+            }
+
+            else if (
+                data.status === "Selesai"
+            ) {
+
+                ikon = "✅";
+
+            }
+
+
+            hasil.innerHTML =
+
+                "<h3>📦 Pesanan Ditemukan</h3>" +
+
+                "<p><b>Nama:</b> " +
+                data.nama +
+                "</p>" +
+
+                "<p><b>Barang:</b> " +
+                data.barang +
+                "</p>" +
+
+                "<p><b>Jumlah:</b> " +
+                data.jumlah +
+                "</p>" +
+
+                "<p><b>Total:</b> Rp" +
+                Number(data.total)
+                .toLocaleString("id-ID") +
+                "</p>" +
+
+                "<div class='status-besar'>" +
+
+                ikon +
+                " " +
+                data.status +
+
+                "</div>" +
+
+                "<p><b>Catatan:</b> " +
+                data.catatan +
+                "</p>" +
+
+                "<p><b>Tanggal:</b> " +
+                data.tanggal +
+                "</p>";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
